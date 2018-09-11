@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: 
+  namespace: weather
+spec:
+  containers:
+  - name: weather-zip
+    image: adilog/weather

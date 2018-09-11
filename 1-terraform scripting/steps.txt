@@ -1,0 +1,4 @@
+i have used Terraform scripting 
+created instances
+generate ssh public and private key
+use the keys to access/install the instances/servers

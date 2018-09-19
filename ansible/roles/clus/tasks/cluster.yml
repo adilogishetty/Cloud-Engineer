@@ -1,0 +1,23 @@
+---
+- include: master.yml
+
+
+- include: addon.yml
+
+
+- include: node.yml
+
+- hosts:
+    - masters[0]
+    - nodes
+  become: yes
+  roles:
+    - { role: opencontrail-provision, when: networking == 'opencontrail' }
+  tags:
+    - network-service-config
+
+
+- hosts: nodes
+  become: yes
+  roles:
+    - { role: contiv, contiv_role: netplugin, when: networking == 'contiv' }
